@@ -100,7 +100,7 @@
     }
 
     .menu-toggle.open .bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
 
     .menu-toggle.open .bar:nth-child(2) {
