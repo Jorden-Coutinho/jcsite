@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates - Jorden Coutinho</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #6600ff, #00c8ff);
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cert {
+      background: rgba(0, 0, 0, 0.4);
+      border-left: 5px solid #fff;
+      padding: 15px 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .cert.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cert h2 {
+      margin: 0 0 5px 0;
+    }
+
+    .cert small {
+      color: #ddd;
+    }
+
+    .cert p {
+      margin: 10px 0 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Certificates</h1>
+
+  <div class="cert-list">
+    <div class="cert">
+      <h2>1st Place - KP West Ward Science Exhibition</h2>
+      <small>Inspector of Education, Mumbai West Division - Dec 2024</small>
+      <p>Won first place for a project titled “Sand Battery” representing SVKM's Acharya A.V. Patel Junior College.</p>
+    </div>
+
+    <div class="cert">
+      <h2>Marian Star - 2023-24</h2>
+      <small>St. Mary's High School, Kalina - Feb 2024</small>
+      <p>Awarded to a select group of students for outstanding performance and behaviour.</p>
+    </div>
+
+    <div class="cert">
+      <h2>Best Speaker - English Debate Competition</h2>
+      <small>St. Mary's High School, Kalina - Sep 2023</small>
+      <p>Won for being the best speaker on the topic “Artificial Intelligence: A Boon or Bane?”.</p>
+    </div>
+
+    <div class="cert">
+      <h2>Declamation Competition - Second Place</h2>
+      <small>St. Joseph’s High School, Kurla - Aug 2019</small>
+      <p>Secured second place for the English Declamation of “Martin Luther King Jr - I Have a Dream”.</p>
+    </div>
+
+    <div class="cert">
+      <h2>General Proficiency (Consecutive Years)</h2>
+      <small>St. Mary's High School and Marian Kindergarten - 2014 to 2023</small>
+      <p>Awarded across multiple years for consistently high academic ranks from 1st to 9th standard.</p>
+    </div>
+  </div>
+
+  <script>
+    // Scroll animation for certificates
+    const certs = document.querySelectorAll('.cert');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    certs.forEach(cert => {
+      observer.observe(cert);
+    });
+  </script>
+
+</body>
+</html>
